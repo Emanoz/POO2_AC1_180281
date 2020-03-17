@@ -17,6 +17,10 @@ public class Produto {
         this.estoque = estoque;    
     }
 
+    public Produto(){
+        
+    }
+
     public int getCodigo() {
         return this.codigo;
     }
