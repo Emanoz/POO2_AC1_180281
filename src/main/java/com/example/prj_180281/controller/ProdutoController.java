@@ -24,9 +24,12 @@ public class ProdutoController {
 
     @GetMapping("/produto/{cod}")
     public ModelAndView getProdutoById(@PathVariable("cod") int cod){
-        ModelAndView mv = new ModelAndView("viewProduto");
-
         Produto p = ps.getProduto(cod);
+
+        if(p == null)
+            return new ModelAndView("viewProdutoErro");
+        
+        ModelAndView mv = new ModelAndView("viewProduto");
 
         mv.addObject("p", p);
 
@@ -40,7 +43,7 @@ public class ProdutoController {
         HashMap<Integer, Produto> hm = ps.getProdutosEmEstoque();
 
         mv.addObject("p", hm);
-        
+
         return mv;
     }
 

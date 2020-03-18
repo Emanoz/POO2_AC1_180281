@@ -24,7 +24,7 @@ public class ProdutoRepository {
         hm.put(7, new Produto(7, "God Of War", 170, 67));
         hm.put(8, new Produto(8, "Red Dead Redemption", 250, 67));
         hm.put(9, new Produto(9, "Zelda", 97, 67));
-        hm.put(10, new Produto(10, "The Legend of Zelda: Breath Of The Wild", 230, 67));
+        hm.put(10, new Produto(10, "The Legend of Zelda: Breath Of The Wild", 230, 0));
     } 
 
     //Testar com int, se der erro mudar para Integer (argumento)

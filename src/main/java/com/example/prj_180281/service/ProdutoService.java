@@ -20,7 +20,7 @@ public class ProdutoService {
         Produto p = pr.getProdutoById(id);
 
         if (p == null) {
-            // Chamar a view de erro
+            return null;
         }
         return p;
     }
