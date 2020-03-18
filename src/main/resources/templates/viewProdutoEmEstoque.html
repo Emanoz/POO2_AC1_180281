@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div th:each="item : ${p}">
+        <div th:each="i : ${item}">
+            <h3 th:text="${i.codigo}"></h3>
+        </div>
+    </div>
 </body>
 </html>

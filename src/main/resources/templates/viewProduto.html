@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Detalhes do produto procurado</h1>
+    <table>
+        <tr>
+            <td>
+                <h3>Codigo</h3>
+            </td>
+            <td>
+                <h3>Nome</h3>
+            </td>
+            <td>
+                <h3>Preco</h3>
+            </td>
+            <td>
+                <h3>Quantidade</h3>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <h3 th:text="${cod}"></h3>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <h3 th:text="${p?.nome}"></h3>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <h3 th:text="${p?.valor}"></h3>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <h3 th:text="${p?.estoque}"></h3>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -2,11 +2,9 @@ package com.example.prj_180281.controller;
 
 import java.util.HashMap;
 
-import javax.websocket.server.PathParam;
 
 import com.example.prj_180281.model.Produto;
 import com.example.prj_180281.service.ProdutoService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,14 +33,14 @@ public class ProdutoController {
         return mv;
     }
 
-    @GetMapping("/produtoEmEstoque/")
+    @GetMapping("/produtoEmEstoque")
     public ModelAndView getProdutoEmEstoque(){
-        ModelAndView mv = new ModelAndView("viewProdutoEstoque");
+        ModelAndView mv = new ModelAndView("viewProdutoEmEstoque");
 
         HashMap<Integer, Produto> hm = ps.getProdutosEmEstoque();
 
         mv.addObject("p", hm);
-
+        
         return mv;
     }
 
