@@ -16,7 +16,7 @@ public class ProdutoService {
     @Autowired
     private ProdutoRepository pr;
 
-    public Produto getProduto(int id) {
+    public Produto getProduto(Integer id) {
         Produto p = pr.getProdutoById(id);
 
         if (p == null) {
@@ -37,21 +37,23 @@ public class ProdutoService {
 
     public HashMap<Integer, Produto> getProdutosByValorAcima(double valor){
         HashMap<Integer, Produto> h = pr.getProdutos();
+        HashMap<Integer, Produto> aux = new HashMap<Integer, Produto>();
 
         for(Integer i : h.keySet()){
-            if(h.get(i).getValor() < valor)
-                h.remove(i);
+            if(h.get(i).getValor() > valor)
+                aux.put(i, h.get(i));
         }
-        return h;
+        return aux;
     }
 
     public HashMap<Integer, Produto> getProdutosByValorAbaixo(double valor){
         HashMap<Integer, Produto> h = pr.getProdutos();
+        HashMap<Integer, Produto> aux = new HashMap<Integer, Produto>();
 
         for(Integer i : h.keySet()){
-            if(h.get(i).getValor() > valor)
-                h.remove(i);
+            if(h.get(i).getValor() < valor)
+                aux.put(i, h.get(i));
         }
-        return h;
+        return aux;
     }
 }

@@ -23,7 +23,7 @@ public class ProdutoController {
     private ProdutoService ps;
 
     @GetMapping("/produto/{cod}")
-    public ModelAndView getProdutoById(@PathVariable("cod") int cod){
+    public ModelAndView getProdutoById(@PathVariable("cod") Integer cod){
         Produto p = ps.getProduto(cod);
 
         if(p == null)
