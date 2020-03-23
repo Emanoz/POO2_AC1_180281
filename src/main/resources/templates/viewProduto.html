@@ -3,48 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Produto procurado</title>
 </head>
 <body>
-    <h1>Detalhes do produto procurado</h1>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+                
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+                
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
     <table>
         <tr>
-            <td>
-                <h3>Codigo</h3>
-            </td>
-            <td>
-                <h3>Nome</h3>
-            </td>
-            <td>
-                <h3>Preco</h3>
-            </td>
-            <td>
-                <h3>Quantidade</h3>
-            </td>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Estoque</th>
         </tr>
-    </table>
-    <table>
         <tr>
-            <td>
-                <div>
-                    <h3 th:text="${cod}"></h3>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <h3 th:text="${p?.nome}"></h3>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <h3 th:text="${p?.valor}"></h3>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <h3 th:text="${p?.estoque}"></h3>
-                </div>
-            </td>
+            <td th:text="${cod}"></td>
+            <td th:text="${p?.nome}"></td>
+            <td th:text="${p?.valor}"></td>
+            <td th:text="${p?.estoque}"></td>
         </tr>
     </table>
 </body>

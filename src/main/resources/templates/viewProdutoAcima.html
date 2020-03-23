@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Produtos acima</title>
 </head>
 <body>
-    <div th:each="item : ${p}">
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+                
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+                
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Estoque</th>
+        </tr>
+        <tr th:each="item : ${p}">
+            <div th:each="i : ${item}">
+                <td th:text="${i?.value.codigo}"></td>
+                <td th:text="${i?.value.nome}"></td>
+                <td th:text="${i?.value.valor}"></td>
+                <td th:text="${i?.value.estoque}"></td>
+            </div>
+        </tr>
+    </table>
+
+
+    <!--<div th:each="item : ${p}">
         <div th:each="i : ${item}">
             <h3 th:text="${i.value.codigo}"></h3>
             <h3 th:text="${i.value.nome}"></h3>
@@ -14,6 +49,6 @@
             <h3 th:text="${i.value.estoque}"></h3>
             <br>
         </div>
-    </div>
+    </div>-->
 </body>
 </html>
